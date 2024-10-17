@@ -27,7 +27,7 @@ with gr.Tab(i18n("Resemble Enhance")):
                     file_count="multiple", label=i18n("Batch files"), file_types=["audio"])
                 resemble_audio_batch_path = gr.Textbox(
                     label=i18n("Path to folder with audio files (High priority)"), value=None)
-            resemble_choose_action = gr.Radio(label=i18n("Choose action"), choices=[
+            resemble_choose_action = gr.Radio(label=i18n("Elija la acción: solo_mejorar, solo_eliminar_ruido, ambos"), choices=[
                                               "only_enchance", "only_denoise", "both"], value="both")
             resemble_chunk_seconds = gr.Slider(
                 minimum=2, maximum=40, value=8, step=1, label=i18n("Chunk seconds (more secods more VRAM usage and faster inference speed)"))
@@ -40,7 +40,7 @@ with gr.Tab(i18n("Resemble Enhance")):
             resemble_temperature = gr.Slider(minimum=0, maximum=1, value=0.5, step=0.01,
                                              label=i18n("CFM Prior Temperature (higher values can improve quality but can reduce stability)"))
             resemble_denoise = gr.Checkbox(
-                value=True, label=i18n("Denoise Before Enhancement (tick if your audio contains heavy background noise)"))
+                value=True, label=i18n("Reducir ruido antes de mejorar (marcar si el audio contiene mucho ruido de fondo)"))
             resemble_output_type = gr.Dropdown(label=i18n("Output type"), choices=[
                                                "wav", "mp3"], value="wav")
         with gr.Column():
