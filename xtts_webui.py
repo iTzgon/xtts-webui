@@ -77,13 +77,13 @@ with gr.Blocks(css=css) as demo:
     with gr.Row(elem_classes="model-choose"):
         models_list = get_folder_names_advanced(this_dir / "models")
         model = gr.Dropdown(
-            label=i18n("Select XTTS model version"),
+            label=i18n("Seleccione la versión del modelo XTTS"),
             value=MODEL_VERSION,
             choices=models_list,
             elem_classes="model-choose__checkbox"
         )
         refresh_model_btn = gr.Button(
-            value=i18n("Update"), elem_classes="model-choose__btn")
+            value=i18n("Actualizar"), elem_classes="model-choose__btn")
 
     with gr.Tab(i18n("Text2Voice")):
         from parts.text2voice import *
